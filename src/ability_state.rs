@@ -56,7 +56,7 @@ pub struct AbilityState<A: Abilitylike, P: Pool = NullPool> {
     pub ability_costs: Option<&'static mut AbilityCosts<A, P>>,
 }
 
-impl<A: Abilitylike, P: Pool> AbilityStateItem<'_, A, P> {
+impl<A: Abilitylike, P: Pool> AbilityStateItem<'_, '_, A, P> {
     /// Is this ability ready?
     ///
     /// Calls [`Abilitylike::ready`] on the specified action.
@@ -156,7 +156,7 @@ impl<A: Abilitylike, P: Pool> AbilityStateItem<'_, A, P> {
     }
 }
 
-impl<A: Abilitylike, P: Pool> AbilityStateReadOnlyItem<'_, A, P> {
+impl<A: Abilitylike, P: Pool> AbilityStateReadOnlyItem<'_, '_, A, P> {
     /// Is this ability ready?
     ///
     /// Calls [`Abilitylike::ready`] on the specified action.
